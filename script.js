@@ -159,9 +159,17 @@ addCart.addEventListener('click', function() {
         totalKcall += item.kcall;
     }
     
+    let sum = document.querySelectorAll('.main__product-price')
+        ,kcall = document.querySelectorAll('.main__product-kcall')
+        ,output = document.querySelectorAll('.main__product-num');
+    sum.forEach(el => el.innerHTML = `${0} сум`);
+    kcall.forEach(el => el.innerHTML = `${0} каллорий`);
+    output.forEach(el => el.innerHTML = 0);
+    
     receipt.style.display = 'flex';
     setTimeout(() => receipt.style.opacity = '1', 100);
     setTimeout(() => receiptWindow.style.top = '0',200);
+    
     
     receiptOut.innerHTML =  `Ваш заказ: \n ${totalName} \nКаллорийность ${totalKcall} \nСумма ${totalPrice}сумм`;
 })
