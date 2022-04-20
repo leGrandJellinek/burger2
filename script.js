@@ -72,7 +72,7 @@ let btnPlusOrMinus = document.querySelectorAll('.main__product-btn')
 btnPlusOrMinus.forEach(item => {
     let interval = 0;
     item.addEventListener('click', () => {
-        plusOrMinus(this);
+        plusOrMinus(item);
     })
     item.addEventListener('mousedown', () => {
         interval = setInterval(() => plusOrMinus(item), 100);
